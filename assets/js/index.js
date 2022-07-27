@@ -52,11 +52,13 @@ $(function() {
         layer.msg('注册成功，请登录')
         // 注册成功后，将表单中的内容清空
         $('#form_reg')[0].reset()
+
       }
   })
 
   // 监听登录表单的提交事件
-  $('#form_login').submit(function(e) {
+  $('#form_login').on('submit', (function(e) {
+    console.log('登录');
     // 阻止默认提交行为
     e.preventDefault()
     $.ajax({
@@ -71,10 +73,11 @@ $(function() {
         layer.msg('登录成功！')
         // 将登录成功得到的 token 字符串，保存到 localStorage 中
         localStorage.setItem('token', res.token)
+
         // 跳转到后台主页
-        location.href = '/index.html'
+        location.href = 'www.google.com';
       }
     })
-  })
+  }))
 })
 })
