@@ -33,6 +33,7 @@ $(function() {
 
   // 监听注册表单的提交事件
   $('#form_reg').on('submit', function(e) {
+    console.log('登录');
     // 1. 阻止默认的提交行为
     e.preventDefault()
     // 2. 发起Ajax的POST请求
@@ -49,21 +50,21 @@ $(function() {
         if (res.status !== 0) {
           return layer.msg(res.msg)
         }
-        layer.msg('注册成功，请登录')
+        layer.msg('注册成功，请登录');
         // 注册成功后，将表单中的内容清空
-        $('#form_reg')[0].reset()
+        $('#form_reg')[0].reset();
 
       }
   })
 
   // 监听登录表单的提交事件
-  $('#form_login').on('submit', (function(e) {
+  $('#form_login').on('submit', function(e) {
     console.log('登录');
     // 阻止默认提交行为
     e.preventDefault()
     $.ajax({
-      url: '/api/login',
       method: 'POST',
+      url: '/api/login',
       // 快速获取表单中的数据
       data: $(this).serialize(),
       success: function(res) {
@@ -78,6 +79,6 @@ $(function() {
         location.href = 'index.html';
       }
     })
-  }))
-})
+  })
+  })
 })

@@ -7,10 +7,6 @@ function getUserInfo(){
     $.ajax({
         url:'/user/getUserInfo',
         type:'get',
-        headers:{
-            Authorization: localStorage.getItem('token') || ''
-        },
-
         success:function(data){
             if(data.status !== 200){
                return layui.layer.msg('请先登录')
