@@ -9,7 +9,7 @@ $.ajaxPrefilter(function(options) {
         if(data.responseJSON.status === 1 || data.responseJSON.message === '身份认证失败！'){
             layui.layer.msg('请先登录')
             localStorage.removeItem('token');
-            location.href = 'login.html';
+            location.href = './login.html';
         }
     }
 }

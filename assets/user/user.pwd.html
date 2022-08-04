@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../assets/lib/layui/css/layui.css" />
+    <link rel="stylesheet" href="../../assets/css/user_pwd.css" />
+</head>
+<body>
+    <div class="layui-card">
+        <div class="layui-card-header">password changing</div>
+        <div class="layui-card-body">
+          
+              <!-- form area -->
+      <!-- form area -->
+      <form class="layui-form" lay-filter="formUserInfo">
+
+        <!-- first input area -->
+        <input type="hidden" name="id" value=""/>
+        <div class="layui-form-item">
+          <label class="layui-form-label">Old Password</label>
+          <div class="layui-input-block">
+            <input type="text" required  lay-verify="required|pwd" name="oldPwd" placeholder="enter your old password" autocomplete="off" class="layui-input" >
+          </div>
+        </div>
+        <!-- second input area -->
+        <div class="layui-form-item">
+            <label class="layui-form-label">Enter new password</label>
+            <div class="layui-input-block">
+              <input type="password"  required  lay-verify="required|pwd|repwd" name="newPwd" placeholder="enter your new password" autocomplete="off" class="layui-input">
+            </div>
+          </div>
+        <!-- third input area -->
+        <div class="layui-form-item">
+            <label class="layui-form-label">reenter your new password</label>
+            <div class="layui-input-block">
+              <input type="password"  required  lay-verify="required|pwd|samepwd" name="renew_p" placeholder="  reenter your new password" autocomplete="off" class="layui-input">
+            </div>
+          </div>
+        <!-- submit and reset button -->
+        <div class="layui-form-item">
+            <div class="layui-input-block">
+              <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+              <button type="reset" id="btnReset" class="layui-btn layui-btn-primary">重置</button>
+              <button class="layui-btn show_p">show password</button>
+            </div>
+          </div>
+
+    </form>
+        </div>
+      </div>
+
+
+      <script src="../lib/layui/layui.all.js"></script>
+      <script src="../../assets/lib/jquery.js"></script>
+     <script src="../js/user_pwd.js"></script>     
+     <script src="../js/baseAPI.js"></script>
+</body>
+</html>

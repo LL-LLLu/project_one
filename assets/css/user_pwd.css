@@ -1,0 +1,22 @@
+html, body{
+    background-color: #f2f3f5;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    padding: 15px;
+    background-color: #f2f3f5;
+}
+
+.layui-form{
+    
+    width: 800px;
+    padding: 50px;
+    padding-left: 100px;
+}
+
+.layui-form-label{
+    left: -90px;
+    white-space: nowrap;
+}
