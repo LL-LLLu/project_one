@@ -11,7 +11,7 @@ exports.getArtCate = (req, res) => {
         if(data.length === 0) {
             return res.cc('no data');
         }
-        res.send({status: 0, message: 'get artcate success', data:data[0]});
+        res.send({status: 0, message: 'get artcate success', data:data});
     } )
 }
 
@@ -43,7 +43,7 @@ exports.deleteCatesById = (req, res) => {
     db.query(sql, [req.params.id], (err, data) => {
         if(err) return res.cc(err);
         if(data.affectedRows !== 1) return res.cc('delete artcate failed')
-        res.send({status: 1, message: 'delete article success'})
+        res.send({status: 0, message: 'delete article success'})
     })
 }
 
@@ -74,7 +74,7 @@ exports.updateCates = (req, res) => {
        
         const sql = 'update ev_article_cate set ? where id = ?'
         db.query(sql, [req.body, req.body.id], (err, data) => {
-            if(err) return res.cc(err)
+            if(err) return res.cc(err)  
             if(data.affectedRows !== 1) return res.cc('update artcate failed')
             res.cc('update artcate success')
         })

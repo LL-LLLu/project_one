@@ -3,8 +3,11 @@ const app = express();
 const cors = require('cors');
 const joi = require('joi');
 
+
 app.use(cors());
 app.use(express.urlencoded({ extended: true }));
+
+app.use('/uploads', express.static('../uploads'));
 
 
 app.use(function(req, res, next) {
@@ -32,6 +35,9 @@ app.use('/my', userinfoRouter);
 
 const artCateRouter = require('./router/artcate');
 app.use('/my/article', artCateRouter);
+
+const articleRouter = require('./router/article');
+app.use('/my/article', articleRouter);
 
 
 

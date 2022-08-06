@@ -8,7 +8,7 @@ router.get('/cates', article_handler.getArtCate);
 
 router.post('/addcates',expressjoi(add_article_Cat_schema), article_handler.addcates);
 
-router.post('/deletecates/:id',expressjoi(delete_article_Cat_schema), article_handler.deleteCatesById);
+router.post('/deletecate/:id',expressjoi(delete_article_Cat_schema), article_handler.deleteCatesById);
 
 router.get('/cates/:id',expressjoi(delete_article_Cat_schema), article_handler.getArtCateById);
 

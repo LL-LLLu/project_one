@@ -81,13 +81,13 @@ exports.updatepwd = (req, res) => {
 
 
     exports.updateAvatar = (req, res) => {
+        console.log('file upload ok')
 
         const sql = 'UPDATE ev_users SET user_pic = ? WHERE id = ?';
 
-        db.query(sql, [req.body.user_pic, req.user.id], (err, data) => {
+        db.query(sql, [req.body.avatar, req.user.id], (err, data) => {
             if(err){
                 return res.cc(err);
-
             }
             if(data.affectedRows !== 1) {
                 return res.cc('update avatar error');
