@@ -29,9 +29,16 @@ app.use('/api', userRouter);
 const userinfoRouter = require('./router/userinfo');
 app.use('/my', userinfoRouter);
 
+
+const artCateRouter = require('./router/artcate');
+app.use('/my/article', artCateRouter);
+
+
+
+
 app.use((err, req, res, next) => {
     // 验证失败导致的错误
-    if (err instanceof joi.ValidationError) return res.cc('identity verification failed');
+    if (err instanceof joi.ValidationError) return res.cc('input varification failed');
 
     if (err.name === 'UnauthroizedError') return res.cc('token error')
     // 未知的错误
